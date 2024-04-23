@@ -15,7 +15,7 @@ service:
                   connectorRef: venkat90107
                   gitFetchType: Branch
                   paths:
-                    - guestbook /guestbook-ui-deployment.yaml
+                    - guestbook/guestbook-ui-deployment.yaml
                     - guestbook/guestbook-ui-svc.yaml
                   repoName: harnesscd-example-apps
                   branch: master
