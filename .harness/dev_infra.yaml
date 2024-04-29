@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: dev_infra
+  identifier: dev_infra
+  orgIdentifier: default
+  projectIdentifier: harness_new
+  environmentRef: devenv
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: k8_connector
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
