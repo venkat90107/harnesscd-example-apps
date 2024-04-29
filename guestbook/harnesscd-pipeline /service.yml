@@ -3,7 +3,24 @@ service:
   identifier: k8_service
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      manifests:
+        - manifest:
+            identifier: k8s_manifest
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: venkat90107
+                  gitFetchType: Branch
+                  paths:
+                    - guestbook/guestbook-ui-deployment.yaml
+                    - guestbook/guestbook-ui-svc.yaml
+                  repoName: harnesscd-example-apps
+                  branch: master
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
   gitOpsEnabled: false
   orgIdentifier: default
   projectIdentifier: harness_new
